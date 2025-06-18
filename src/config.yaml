@@ -1,5 +1,5 @@
 extn: .png
-epochs: 1
+epochs: 300
 im_width: 384
 im_height: 288
 model_path: ../output/models/model.pth
@@ -8,7 +8,7 @@ image_path: ../input/PNG/Original
 mask_path: ../input/PNG/Ground Truth
 output_path: ../output/prediction.png
 batch_size: 10 # Keep this for now, or reduce if num_workers=0 doesn't fix it
-num_workers: 4 # <-- SET THIS TO 0
+num_workers: 1 # <-- SET THIS TO 0
 early_stopping_patience: 10
 learning_rate: 0.001
 weight_decay: 0.0001
