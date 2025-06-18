@@ -4,3 +4,4 @@
 # /**venv */
 **.py[cod]
 **/__pycache__
+output/
