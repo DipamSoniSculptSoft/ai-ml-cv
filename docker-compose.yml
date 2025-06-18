@@ -1,0 +1,17 @@
+services:
+  ml_pipeline:
+    # build: .
+    image: dipamsoni361/unetpp_pipeline:latest
+    volumes:
+      - ./src:/app/src
+      - ./input:/app/input
+      - ./output:/app/output
+    environment:
+      - CUDA_VISIBLE_DEVICES=0
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              capabilities: [gpu]
+    # command: ["python3.10", "main.py"]
