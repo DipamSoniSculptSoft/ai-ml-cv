@@ -7,7 +7,7 @@ log_path: ../output/models/logs/logs.csv
 image_path: ../input/PNG/Original
 mask_path: ../input/PNG/Ground Truth
 output_path: ../output/prediction.png
-batch_size: 10 # Keep this for now, or reduce if num_workers=0 doesn't fix it
+batch_size: 32 # Keep this for now, or reduce if num_workers=0 doesn't fix it
 num_workers: 1 # <-- SET THIS TO 0
 early_stopping_patience: 10
 learning_rate: 0.001
