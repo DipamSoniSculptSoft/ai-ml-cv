@@ -1,18 +1,26 @@
 services:
+  gpu_service:
+    image: nvidia/cuda:12.9.0-base-ubuntu22.04
+    command: nvidia-smi
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
   ml_pipeline:
-    # build: .
-    runtime: nvidia
     image: dipamsoni361/unetpp_pipeline:latest
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
     volumes:
       - ./src:/app/src
       - ./input:/app/input
       - ./output:/app/output
     environment:
       - CUDA_VISIBLE_DEVICES=0
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              capabilities: [gpu]
-    # command: ["python3.10", "main.py"]
