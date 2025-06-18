@@ -1,6 +1,7 @@
 services:
   ml_pipeline:
     # build: .
+    runtime: nvidia
     image: dipamsoni361/unetpp_pipeline:latest
     volumes:
       - ./src:/app/src
