@@ -215,6 +215,7 @@ Device: {DEVICE_STR}
             print(f"=> saved best model to {model_path} with val_iou: {best_iou:.4f}")
             trigger = 0
 
+
         # Early stopping (optional)
         # if trigger >= config.get("early_stopping_patience", 10): # Example: stop if no improvement for 10 epochs
         #     print("Early stopping triggered.")
@@ -306,4 +307,5 @@ Device: {DEVICE_STR}
     
     
 if __name__ == '__main__':
+    print("Early stopping trigger stopped")
     main()
