@@ -216,9 +216,9 @@ Device: {DEVICE_STR}
             trigger = 0
 
         # Early stopping (optional)
-        if trigger >= config.get("early_stopping_patience", 10): # Example: stop if no improvement for 10 epochs
-            print("Early stopping triggered.")
-            break
+        # if trigger >= config.get("early_stopping_patience", 10): # Example: stop if no improvement for 10 epochs
+        #     print("Early stopping triggered.")
+        #     break
 
     print("Training finished.")
     print(f"Best model saved at: {model_path}")
